@@ -2,9 +2,11 @@
 
 using namespace std;
 
+const int colonne_max = 5;
+
 int main(){
 
-	char repeat;
+	char repeat; //Variable pour répéter le programme
 
 	//-------------------- introduction --------------------
 	//Présenter le programme
@@ -17,21 +19,22 @@ int main(){
 		cout << "entrer un valeur [2-1'000] : ";
 		cin >> limit; //Récupérer la limite des valeurs à afficher
 
-	} while(limit < 2 || limit > 1'000); //Si faux répéter la question
+	} while(limit < 2 || limit > 1'000); //répéter la question si vrai
 
 
 	//-------------------- Affichage tableau --------------------
 
 		int nbr = 2, colonne = 0;
-		//cout << "  ";// Pour que la premirère ligne sois bien aligner
-		cout << '\t';
-		while(nbr <= limit){		//Première boucle crée les saut de ligne
-			while(nbr <= limit && colonne < 5){		//Deuxième boucle affiche le nbr premier
-				if(nbr%2 != 0 && nbr%3 != 0 && nbr%5 != 0 && nbr%7 != 0 && nbr%11 != 0 && nbr%13 != 0
-					&& nbr%17 != 0 && nbr%19 != 0 && nbr%23 != 0 || nbr == 2 || nbr == 3 || nbr == 5
-					|| nbr == 7 || nbr == 11 || nbr == 13 || nbr == 17 || nbr == 19 || nbr == 23){
-					cout <<  '\t' << nbr << " ";
-					++colonne;
+		while(nbr <= limit){		//Première boucle crée les sauts de ligne
+			while(nbr <= limit && colonne < colonne_max){	//Deuxième boucle test et affiche le nbr premier
+				for(int i = 2; i <= nbr; ++i){	//boucle pour tester nbr
+					if(i == nbr){				//nbr est un nombre premier
+						cout <<  '\t' << nbr << " ";
+						++colonne;
+					}
+					else if(nbr%i == 0){		//nbr n'est pas un nombre premier
+						break;
+					}
 				}
 				++nbr;		//passe à la valeur suivante
 			}
