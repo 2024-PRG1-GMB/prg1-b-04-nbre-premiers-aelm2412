@@ -24,11 +24,12 @@ int main(){
 
 		int nbr = 2, colonne = 0;
 		//cout << "  ";// Pour que la premirère ligne sois bien aligner
-
+		cout << '\t';
 		while(nbr <= limit){		//Première boucle crée les saut de ligne
 			while(nbr <= limit && colonne < 5){		//Deuxième boucle affiche le nbr premier
-				if(nbr%2 != 0 && nbr%3 != 0 && nbr%5 != 0 && nbr%7 != 0 && nbr%11 != 0 ||
-					nbr == 2 || nbr == 3 || nbr == 5 || nbr == 7 || nbr == 11){
+				if(nbr%2 != 0 && nbr%3 != 0 && nbr%5 != 0 && nbr%7 != 0 && nbr%11 != 0 && nbr%13 != 0
+					&& nbr%17 != 0 && nbr%19 != 0 && nbr%23 != 0 || nbr == 2 || nbr == 3 || nbr == 5
+					|| nbr == 7 || nbr == 11 || nbr == 13 || nbr == 17 || nbr == 19 || nbr == 23){
 					cout <<  '\t' << nbr << " ";
 					++colonne;
 				}
