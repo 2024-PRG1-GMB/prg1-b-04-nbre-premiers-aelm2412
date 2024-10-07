@@ -3,6 +3,8 @@
 using namespace std;
 
 const int colonne_max = 5;
+const int nombre_min = 2;
+const int nombre_max = 1'000;
 
 int main(){
 
@@ -19,7 +21,7 @@ int main(){
 		cout << "entrer un valeur [2-1'000] : ";
 		cin >> limit; //Récupérer la limite des valeurs à afficher
 
-	} while(limit < 2 || limit > 1'000); //répéter la question si vrai
+	} while(limit < nombre_min || limit > nombre_max); //répéter la question si vrai
 
 
 	//-------------------- Affichage tableau --------------------
